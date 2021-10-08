@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.get("/index", (req, res) => {
-  res.render("/");
+  res.render("index");
 });
 
 app.get("/detalhes", (req, res) => {
