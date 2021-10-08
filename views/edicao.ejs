@@ -7,19 +7,47 @@
     <link rel="stylesheet" href="/CSS/style.css">
     <title>Edição</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li>
-                <a href="index">Home</a>
-            </li>
-            <li>
-                <a href="detalhes">Detalhes</a>
-            </li>
-            <li>
-                <a href="listagem">Listagem</a>
-            </li>
-        </ul>
-    </nav>
-</body>
+    <body>
+        <nav>
+            <ul>
+                <li>
+                    <a href="index">Home</a>
+                </li>
+                <li>
+                    <a href="detalhes">Detalhes</a>
+                </li>
+                <li>
+                    <a href="listagem">Listagem</a>
+                </li>
+            </ul>
+        </nav>
+        <h1>CADASTRO</h1>
+            <form action="/new" method="POST">
+                <section>
+                    <label for="nome">Nome</label>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" required>
+                </section>
+                <section>
+                    <label for="marca">Marca</label>
+                    <input type="text" name="marca" id="marca" placeholder="Digite a marca do veículo" required>
+                </section>
+                <section>
+                    <label for="cilindrada">Cilindrada</label>
+                    <input type="number" name="cilindrada" id="cilindrada" min="1.0" max="10.0" step="1" placeholder="Digite a cilindrada do veículo" required>
+                </section>
+                <section>
+                    <label for="potencia">Potência</label>
+                    <input type="number" name="potencia" id="potencia" min="30" max="2000" step="1" placeholder="Digite a potência do veículo" required>
+                </section>
+                <section>
+                    <label for="peso">Peso</label>
+                    <input type="number" name="peso" id="peso" min="300" max="5000" step="1" placeholder="Digite o peso do veículo" required>
+                </section>
+                <section>
+                    <label for="quat_cilindrdos">Quantidade de Cilindros</label>
+                    <input type="number" name="quat_cilindrdos" id="quat_cilindrdos" min="2" max="12" step="1" placeholder="Digite a quantidade de cilindros do veículo" required>
+                </section>
+                <button type="submit">Cadastrar</button>
+            </form>
+    </body>
 </html>
