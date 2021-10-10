@@ -1,6 +1,90 @@
-li {
-  list-style: none;
-  display: flex;
-  justify-content: flex-end;
+@font-face {
+  font-family: "Audi";
+  src: url("/CSS/AudiTypeVF_4.04.ttf");
 }
 
+* {
+  font-family: "Audi";
+  margin: 0;
+  padding: 0;
+}
+
+/*.body {
+  background-color: #024f83;
+}*/
+.body {
+  background-image: linear-gradient(
+    to right,
+    rgb(37, 98, 254),
+    rgb(21, 218, 21)
+  );
+}
+
+nav {
+  display: flex;
+  justify-content: end;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  border: 1px solid #106af2;
+  padding: 0.5%;
+}
+.botao {
+  text-decoration: none;
+  padding: 5px;
+  margin: 3px;
+  color: #02395e;
+}
+.botao:hover {
+  text-decoration: none;
+  padding: 5px;
+  margin: 3px;
+  color: #026eb6;
+}
+.rodape {
+  display: flex;
+  justify-content: center;
+  color: rgb(229, 229, 229);
+}
+form {
+  height: 100%;
+  width: 100%;
+  font-family: "Audi";
+  font-size: 20px;
+  text-align: center;
+}
+label {
+  display: block;
+  font-weight: 600px;
+  height: 30px;
+  margin-top: 5px;
+  color: rgb(229, 229, 229);
+}
+input,
+select {
+  width: 300px;
+  height: 30px;
+  text-align: center;
+  font-size: 90%;
+}
+h1 {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: rgb(229, 229, 229);
+}
+#submit {
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  font-family: "Audi";
+  font-weight: 600;
+  border-radius: 5px;
+}
+#submit:hover {
+  padding: 5px;
+  margin-top: 5px;
+  font-size: 15px;
+  background-color: rgb(21, 218, 21);
+  border-radius: 5px;
+  cursor: pointer;
+}
