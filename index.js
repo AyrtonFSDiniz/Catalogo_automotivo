@@ -33,7 +33,7 @@ app.get("/edicao", (req, res) => {
 
 app.get("/edicao/:id", async (req, res) => {
   const carros = await Carros.findByPk(req.params.id);
-  res.render("edicao", );
+  res.render("edicao");
 });
 
 app.get("/carros", async (req, res) => {
@@ -63,7 +63,7 @@ app.post("/carros", async (req, res) => {
     Numero_Cilindros: numerocilindros,
     Imagem: imagem_url,
   });
-  res, render("..views/carros", { Carros: carros });
+  res, render("..view/carros", { Carros: carros });
 });
 
 db.conectado();
