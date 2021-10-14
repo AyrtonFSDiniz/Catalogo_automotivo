@@ -17,7 +17,7 @@
             <a class="botao" href="listagem">Listagem</a>
         </nav>
         <h1>CADASTRO</h1>
-            <form action="/new" method="POST">
+            <form action="/carros" method="POST">
                 <section>
                     <label for="nome">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" required>
@@ -91,7 +91,14 @@
                     <label for="quat_cilindrdos">Quantidade de Cilindros</label>
                     <input type="number" name="quat_cilindrdos" id="quat_cilindrdos" min="2" max="12" step="1" placeholder="Digite a quantidade de cilindros" required>
                 </section>
+
+                <section>
+                    <label for="imagem">Imagem</label>
+                    <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple required>
+                </section>
+
                 <button id="submit" type="submit">Cadastrar</button>
             </form>
+
     </body>
 </html>

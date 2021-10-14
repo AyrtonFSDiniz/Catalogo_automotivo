@@ -31,9 +31,39 @@ app.get("/edicao", (req, res) => {
   res.render("edicao");
 });
 
+app.get("/edicao/:id", async (req, res) => {
+  const carros = await Carros.findByPk(req.params.id);
+  res.render("edicao", );
+});
+
 app.get("/carros", async (req, res) => {
   const carros = await Carros.findAll();
-  res.json(carros);
+  //res.json(carros);
+  res.render("carros", { Carros: carros });
+});
+
+app.post("/carros", async (req, res) => {
+  const {
+    nome,
+    marca,
+    ano,
+    cilindrada,
+    potencia,
+    peso,
+    numerocilindros,
+    imagem_url,
+  } = req.body;
+  const carros = Carros.create({
+    Nome: nome,
+    Marca: marca,
+    Ano: ano,
+    Cilindrada: cilindrada,
+    Potencia: potencia,
+    Peso: peso,
+    Numero_Cilindros: numerocilindros,
+    Imagem: imagem_url,
+  });
+  res, render("..views/carros", { Carros: carros });
 });
 
 db.conectado();

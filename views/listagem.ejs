@@ -17,8 +17,19 @@
          <a class="botao" href="edicao">Edição</a>     
     </nav>
 
-    <section>
-       
-    </section>
+    
+        <% carros.forEach(item => { %>
+            <h2><%= item.nome %></h2>
+            <p><%= item.marca %></p>
+            <p><%= item.ano %></p>
+            <p><%= item.cilindrada %></p>
+            <p><%= item.potencia %></p>
+            <p><%= item.numerocilindros %></p>
+            <p><%= item.imagem_url %></p>
+            <a href="/edicao/:<%= item.ID%>">Editar</a>
+            <a href="/edicao/:<%= item.ID%>">Excluir</a>
+      <%  }) %>
+   
+
 </body>
 </html>
