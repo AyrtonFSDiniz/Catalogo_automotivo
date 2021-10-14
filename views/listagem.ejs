@@ -4,21 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/style.css">
+    <link rel="shortcut icon" type="imagex/png" href="/img/car-small.ico">
     <title>Listagem</title>
 </head>
-<body>
-    <nav>
-        <ul>
-            <li>
-                <a href="index">Home</a>
-            </li>
-            <li>
-                <a href="detalhes">Detalhes</a>
-            </li>
-            <li>
-                <a href="edicao">Edição</a>
-            </li>
-        </ul>
+<body class="body">
+    <nav>          
+        <a class="botao" href="index">Home</a>
+           
+         <a class="botao" href="detalhes">Detalhes</a>
+            
+         <a class="botao" href="edicao">Edição</a>     
     </nav>
+
+    
+        <% carros.forEach(item => { %>
+            <h2><%= item.nome %></h2>
+            <p><%= item.marca %></p>
+            <p><%= item.ano %></p>
+            <p><%= item.cilindrada %></p>
+            <p><%= item.potencia %></p>
+            <p><%= item.numerocilindros %></p>
+            <p><%= item.imagem_url %></p>
+            <a href="/edicao/:<%= item.ID%>">Editar</a>
+            <a href="/edicao/:<%= item.ID%>">Excluir</a>
+      <%  }) %>
+   
+
 </body>
 </html>
