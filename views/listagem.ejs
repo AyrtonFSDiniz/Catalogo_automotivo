@@ -9,27 +9,38 @@
     <title>Listagem</title>
 </head>
 <body class="body">
-    <nav>          
-        <a class="botao" href="index">Home</a>
-           
-         <a class="botao" href="detalhes">Detalhes</a>
-            
-         <a class="botao" href="edicao">Edição</a>     
-    </nav>
 
-    
-        <% Carros.forEach(item => { %>
-            <h2><%= item.nome %></h2>
-            <p><%= item.marca %></p>
-            <p><%= item.ano %></p>
-            <p><%= item.cilindrada %></p>
-            <p><%= item.potencia %></p>
-            <p><%= item.numerocilindros %></p>
-            <p><%= item.imagem_url %></p>
-            <a href="/edicao/:<%= item.ID%>">Editar</a>
-            <a href="/edicao/:<%= item.ID%>">Excluir</a>
-      <%  }) %>
-   
+    <header>
+        <nav>          
+            <a class="botao" href="index">Home</a>
+
+            <a class="botao" href="cadastro">Cadastro</a>
+            
+            <a class="botao" href="detalhes">Detalhes</a>
+                
+            <a class="botao" href="edicao">Edição</a>     
+        </nav>
+    </header>
+       
+    <article>
+        <h2>Sua seleção de carros dos sonhos!</h2>
+        <p>Aqui está uma lista pré selecionada de alguns carros aos quais eu amaria ter.
+        Fique a vontade para alterar ou excluir, para isso use o menu de navegação na parte superior da página.
+        </p>
+    </article>
+
+    <% carros.forEach(item => { %>
+        <section id="lista">
+        <ul>
+           <li>Id: <%= item.id %></li>
+           <li>Nome: <%= item.nome %></li>
+            <li>Tipo: <%= item.marca %></li>
+            <li>Ano: <%= item.ano %></li>
+            <li><img src="<%= item.imagem_url %>"/></li>
+        </ul>
+      </section>
+      <% }); %>
+        
 
 </body>
 </html>

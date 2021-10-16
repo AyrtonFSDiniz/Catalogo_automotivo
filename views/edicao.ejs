@@ -9,14 +9,19 @@
     <title>Edição</title>
 </head>
     <body class="body">
-        <nav>
-            <a class="botao" href="index">Home</a>
-               
-            <a class="botao" href="detalhes">Detalhes</a>
-               
-            <a class="botao" href="listagem">Listagem</a>
-        </nav>
-        <h1>CADASTRO</h1>
+        <header>
+            <nav>
+                <a class="botao" href="index">Home</a>
+
+                <a class="botao" href="cadastro">Cadastro</a>
+                
+                <a class="botao" href="detalhes">Detalhes</a>
+                
+                <a class="botao" href="listagem">Listagem</a>
+                
+            </nav>
+        </header> 
+        <h1>EDIÇÃO</h1>
             <form action="/carros" method="POST">
                 <section>
                     <label for="nome">Nome</label>
@@ -50,6 +55,7 @@
                         <option value="Jeep">Jeep</option>
                         <option value="Jinbei">Jinbei</option>
                         <option value="Kia">Kia</option>
+                        <option value="Koenigsegg">Koenigsegg</option>
                         <option value="Lamborghini">Lamborghini</option>
                         <option value="Land Rover">Lande Rover</option>
                         <option value="Lifan">Lifan</option>
@@ -76,6 +82,10 @@
                     </label>
                 </section>
                 <section>
+                    <label for="ano">Ano</label>
+                    <input type="month" name="ano" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
+                </section>
+                <section>
                     <label for="cilindrada">Cilindrada</label>
                     <input type="number" name="cilindrada" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
                 </section>
@@ -94,10 +104,11 @@
 
                 <section>
                     <label for="imagem">Imagem</label>
-                    <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple required>
+                    <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple>
                 </section>
 
-                <button id="submit" type="submit">Cadastrar</button>
+                <button id="submit" type="submit">Editar</button>
+                <button id="submit" type="submit">Apagar</button>
             </form>
 
     </body>
