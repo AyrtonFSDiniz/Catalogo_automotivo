@@ -11,13 +11,7 @@
 
 .body {
   /*background-image: linear-gradient(45deg, #4c4c4c 50%, #999999 50%);*/
-  background-image: linear-gradient(
-    to left,
-    #3d3b3b,
-    #666666,
-    #b3b3b3,
-    #e5e5e5
-  );
+  background-image: linear-gradient(to left, #666262, #e5e5e5);
 }
 #bodyindex {
   background-color: darkgrey;
@@ -28,8 +22,12 @@ nav {
   justify-content: end;
   background-color: rgb(255, 255, 255);
   width: auto;
-  border: 1px solid #106af2;
   padding: 0.5%;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 .botao {
   text-decoration: none;
@@ -45,9 +43,20 @@ nav {
 }
 .rodape {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   color: rgb(48, 48, 48);
-  margin: 0.3rem;
+  margin: 1rem;
+}
+.github {
+  display: flex;
+  justify-content: center;
+}
+#git1 {
+  order: 1;
+}
+#git2 {
+  order: 2;
 }
 form {
   height: 100%;
@@ -72,10 +81,14 @@ select {
 }
 h1 {
   text-align: center;
-  font-size: 1.25rem;
+  font-size: 2rem;
   margin-top: 1.25rem;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   color: #333333;
+}
+h2 {
+  color: #333333;
+  margin-bottom: 1rem;
 }
 #submit {
   padding: 0.313rem;
@@ -118,10 +131,7 @@ article {
   margin: 1rem;
   flex-direction: column;
   text-align: center;
-}
-p {
-  margin-left: 10rem;
-  margin-right: 10rem;
+  box-sizing: border-box;
 }
 li {
   list-style: none;

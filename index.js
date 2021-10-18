@@ -37,7 +37,7 @@ app.get("/listagem/:id", async (req, res) => {
 
 app.get("/listagem", async (req, res) => {
   const carros = await Carros.findAll();
-  res.render("listagem", { carros: carros});
+  res.render("listagem", { carros: carros });
 });
 
 app.post("/cadastro", async (req, res) => {
@@ -51,17 +51,35 @@ app.post("/cadastro", async (req, res) => {
     numerocilindros,
     imagem_url,
   } = req.body;
-  const carros = Carros.create({
-    Nome: nome,
-    Marca: marca,
-    Ano: ano,
-    Cilindrada: cilindrada,
-    Potencia: potencia,
-    Peso: peso,
-    Numero_Cilindros: numerocilindros,
-    Imagem: imagem_url,
-  });
-  res.render("listagem", { Carros: carros });
+
+  if (!nome) {
+    res.render("cadastro", { mensagem: "Nome do carro é obrigatório!" });
+  }
+
+  if (!marca) {
+    res.render("cadastro", { mensagem: "Marca do carro é obrigatório!" });
+  }
+
+  if (!imagem_url) {
+    res.render("cadastro", { mensagem: "Imagem do carro é obrigatório!" });
+  }
+
+  try {
+    const carros = await Carros.create({
+      Nome: nome,
+      Marca: marca,
+      Ano: ano,
+      Cilindrada: cilindrada,
+      Potencia: potencia,
+      Peso: peso,
+      Numero_Cilindros: numerocilindros,
+      Imagem: imagem_url,
+    });
+    res.render("listagem", { Carros: carros });
+  } catch (err) {
+    console.log(err);
+    res.render("cadastro", { mensagem: "Erro ao cadastrar o veículo!" });
+  }
 });
 
 db.conectado();
