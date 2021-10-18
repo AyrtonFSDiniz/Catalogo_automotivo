@@ -1,0 +1,139 @@
+@font-face {
+  font-family: "Audi";
+  src: url("/CSS/AudiTypeVF_4.04.ttf");
+}
+
+* {
+  font-family: "Audi";
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  /*background-image: linear-gradient(45deg, #4c4c4c 50%, #999999 50%);*/
+  background-image: linear-gradient(to left, #666262, #e5e5e5);
+}
+nav {
+  display: flex;
+  justify-content: end;
+  background-color: rgb(255, 255, 255);
+  width: auto;
+  padding: 0.5%;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+.botao {
+  text-decoration: none;
+  padding: 0.313rem;
+  margin: 0.188rem;
+  color: #02395e;
+}
+.botao:hover {
+  text-decoration: none;
+  padding: 0.313rem;
+  margin: 0.188rem;
+  color: #f50537;
+}
+.rodape {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(48, 48, 48);
+  margin: 1rem;
+}
+.github {
+  display: flex;
+  justify-content: center;
+}
+#git1 {
+  order: 1;
+}
+#git2 {
+  order: 2;
+}
+form {
+  height: 100%;
+  width: 100%;
+  font-family: "Audi";
+  font-size: 1.25rem;
+  text-align: center;
+}
+label {
+  display: block;
+  font-weight: 37.5rem;
+  height: 1.875rem;
+  margin-top: 0.313rem;
+  color: #333333;
+}
+input,
+select {
+  width: 18.75rem;
+  height: 1.875rem;
+  text-align: center;
+  font-size: 90%;
+}
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  color: #333333;
+}
+h2 {
+  color: #333333;
+  margin-bottom: 1rem;
+}
+#submit {
+  padding: 0.313rem;
+  margin-top: 0.313rem;
+  font-size: 0.938rem;
+  font-family: "Audi";
+  font-weight: 600;
+  border-radius: 0.313rem;
+}
+#submit:hover {
+  padding: 0.313rem;
+  margin-top: 0.313rem;
+  font-size: 0.938rem;
+  background-color: #d7361c;
+  border-radius: 0.313rem;
+  cursor: pointer;
+}
+#img1 {
+  height: 18.75rem;
+  width: 50rem;
+}
+#img2 {
+  height: 18.75rem;
+  width: 25rem;
+}
+#img3 {
+  height: 18.75rem;
+  width: 31.25rem;
+}
+.img {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  max-width: 100%;
+  border: 2px solid black;
+}
+article {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+  margin-left: 2rem;
+}
+#lista {
+  margin-bottom: 3rem;
+  text-align: center;
+}

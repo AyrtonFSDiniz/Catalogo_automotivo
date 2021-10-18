@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/CSS/style.css">
+        <link rel="shortcut icon" type="imagex/png" href="/img/car-small.ico">
+        <title>Edição</title>
+    </head>
+    <body class="body">
+        <header>
+            <nav>
+                <a class="botao" href="index">Home</a>
+
+                <a class="botao" href="listagem">Listagem</a>
+                    
+                <a class="botao" href="detalhes">Detalhes</a>
+                    
+                <a class="botao" href="edicao">Edição</a>
+            </nav>
+        </header>
+            <h1>CADASTRO</h1>
+                <form action="/criar" method="POST">
+                    <section>
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" required>
+                    </section>
+                    <section>
+                        <label for="marca">Marca</label>
+                        <select name="marca">
+                            <option value="Agrale">Agrale</option>
+                            <option value="Aston Martin">Aston Martin</option>
+                            <option value="Audi">Audi</option>                        
+                            <option value="Bentley">Bentley</option>
+                            <option value="BMW">BMW</option>
+                            <option value="Changan">Changan</option>
+                            <option value="Chery">Chery</option>
+                            <option value="Chevrolet">Chevrolet</option>
+                            <option value="Chrysler">Chrysler</option>
+                            <option value="Citroen">Citroen</option>
+                            <option value="Dodge">Dodge</option>
+                            <option value="Effa">Effa</option>
+                            <option value="Ferrari">Ferrari</option>
+                            <option value="Fiat">Fiat</option>
+                            <option value="Ford">Ford</option>
+                            <option value="Geely">Geely</option>
+                            <option value="Hafei">Hafei</option>
+                            <option value="Honda">Honda</option>
+                            <option value="Hyundai">Hyundai</option>
+                            <option value="Iveco">Iveco</option>
+                            <option value="Jac">Jac</option>
+                            <option value="Jaguar">Jaguar</option>
+                            <option value="Jeep">Jeep</option>
+                            <option value="Jinbei">Jinbei</option>
+                            <option value="Kia">Kia</option>
+                            <option value="Koenigsegg">Koenigsegg</option>
+                            <option value="Lamborghini">Lamborghini</option>
+                            <option value="Land Rover">Lande Rover</option>
+                            <option value="Lifan">Lifan</option>
+                            <option value="Mahindra">Mahindra</option>
+                            <option value="Maserati">Maserati</option>
+                            <option value="Mercedes-Benz">Mercedes-Benz</option>
+                            <option value="MG">MG</option>
+                            <option value="Mini">Mini</option>
+                            <option value="Mitsubishi">Mitsubishi</option>
+                            <option value="Nissan">Nissan</option>
+                            <option value="Peugeot">Peugeot</option>
+                            <option value="Porsche">Porsche</option>
+                            <option value="Ram">Ram</option>
+                            <option value="Renault">Renault</option>
+                            <option value="Smart">Smart</option>
+                            <option value="Ssangyong">Ssangyong</option>
+                            <option value="Subaru">Subaru</option>
+                            <option value="Suzuki">Suzuki</option>
+                            <option value="Tesla">Tesla</option>
+                            <option value="Toyota">Toyota</option>
+                            <option value="Volkswagem">Volkswagem</option>
+                            <option value="Volvo">Volvo</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                        </label>
+                    </section>
+
+                    <section>
+                        <label for="ano">Ano</label>
+                        <input type="month" name="ano" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
+                    </section>
+
+                    <section>
+                        <label for="cilindrada">Cilindrada</label>
+                        <input type="number" name="cilindrada" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
+                    </section>
+                    <section>
+                        <label for="potencia">Potência</label>
+                        <input type="number" name="potencia" id="potencia" min="30" max="2000" step="1" placeholder="Digite a potência do veículo" required>
+                    </section>
+                    <section>
+                        <label for="peso">Peso</label>
+                        <input type="number" name="peso" id="peso" min="300" max="5000" step="1" placeholder="Digite o peso do veículo" required>
+                    </section>
+                    <section>
+                        <label for="numerocilindros">Quantidade de Cilindros</label>
+                        <input type="number" name="numerocilindros" id="numerocilindros" min="2" max="12" step="1" placeholder="Digite a quantidade de cilindros" required>
+                    </section>
+
+                    <section>
+                        <label for="imagem">Imagem</label>
+                        <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple>
+                    </section>
+
+                    <button id="submit" type="submit">Cadastrar</button>
+                </form>
+
+    </body>
+</html>
