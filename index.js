@@ -10,6 +10,7 @@ const port = process.env.PORT; /*|| 3000*/
 const Carros = require("./model/carros");
 const upload = multer({ storage });
 const lista_carros = [];
+let message = "";
 
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "views/public")));
@@ -53,7 +54,7 @@ app.post("/cadastro", async (req, res) => {
     aceleracao,
     torque,
   } = req.body;
-
+  message = "Cadastro realizado com sucesso!";
   if (!nome) {
     res.render("cadastro", { mensagem: "Nome do carro é obrigatório!" });
   }
@@ -79,7 +80,7 @@ app.post("/cadastro", async (req, res) => {
       Aceleracao: aceleracao,
       Torque: torque,
     });
-    res.render("listagem", { Carros: carros });
+    res.render("listagem", message, { Carros: carros });
   } catch (err) {
     console.log(err);
     res.render("cadastro", { mensagem: "Erro ao cadastrar o veículo!" });
