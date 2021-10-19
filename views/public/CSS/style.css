@@ -9,82 +9,131 @@
   padding: 0;
 }
 
-/*.body {
-  background-color: #024f83;
-}*/
-.body {
-  background-image: linear-gradient(
-    to right,
-    rgb(37, 98, 254),
-    rgb(21, 218, 21)
-  );
+body {
+  /*background-image: linear-gradient(45deg, #4c4c4c 50%, #999999 50%);*/
+  background-image: linear-gradient(to left, #666262, #e5e5e5);
 }
-
 nav {
   display: flex;
   justify-content: end;
   background-color: rgb(255, 255, 255);
   width: auto;
-  border: 1px solid #106af2;
   padding: 0.5%;
+}
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 .botao {
   text-decoration: none;
-  padding: 5px;
-  margin: 3px;
+  padding: 0.313rem;
+  margin: 0.188rem;
   color: #02395e;
 }
 .botao:hover {
   text-decoration: none;
-  padding: 5px;
-  margin: 3px;
-  color: #026eb6;
+  padding: 0.313rem;
+  margin: 0.188rem;
+  color: #f50537;
 }
 .rodape {
   display: flex;
+  flex-direction: column;
+  text-align: center;
+  color: rgb(48, 48, 48);
+  margin: 1rem;
+}
+.github {
+  display: flex;
   justify-content: center;
-  color: rgb(229, 229, 229);
+}
+#git1 {
+  order: 1;
+}
+#git2 {
+  order: 2;
 }
 form {
   height: 100%;
   width: 100%;
   font-family: "Audi";
-  font-size: 20px;
+  font-size: 1.25rem;
   text-align: center;
 }
 label {
   display: block;
-  font-weight: 600px;
-  height: 30px;
-  margin-top: 5px;
-  color: rgb(229, 229, 229);
+  font-weight: 37.5rem;
+  height: 1.875rem;
+  margin-top: 0.313rem;
+  color: #333333;
 }
 input,
 select {
-  width: 300px;
-  height: 30px;
+  width: 18.75rem;
+  height: 1.875rem;
   text-align: center;
   font-size: 90%;
 }
 h1 {
   text-align: center;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  color: rgb(229, 229, 229);
+  font-size: 2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  color: #333333;
+}
+h2 {
+  color: #333333;
+  margin-bottom: 1rem;
 }
 #submit {
-  padding: 5px;
-  margin-top: 5px;
-  font-size: 15px;
+  padding: 0.313rem;
+  margin-top: 0.313rem;
+  font-size: 0.938rem;
   font-family: "Audi";
   font-weight: 600;
-  border-radius: 5px;
+  border-radius: 0.313rem;
 }
 #submit:hover {
-  padding: 5px;
-  margin-top: 5px;
-  font-size: 15px;
-  background-color: rgb(21, 218, 21);
-  border-radius: 5px;
+  padding: 0.313rem;
+  margin-top: 0.313rem;
+  font-size: 0.938rem;
+  background-color: #d7361c;
+  border-radius: 0.313rem;
   cursor: pointer;
+}
+#img1 {
+  height: 18.75rem;
+  width: 50rem;
+}
+#img2 {
+  height: 18.75rem;
+  width: 25rem;
+}
+#img3 {
+  height: 18.75rem;
+  width: 31.25rem;
+}
+.img {
+  margin: 0 auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  display: block;
+  max-width: 100%;
+  border: 2px solid black;
+}
+article {
+  display: flex;
+  margin: 1rem;
+  flex-direction: column;
+  text-align: center;
+  box-sizing: border-box;
+}
+li {
+  list-style: none;
+  margin-left: 2rem;
+}
+#lista {
+  margin-bottom: 3rem;
+  text-align: center;
 }

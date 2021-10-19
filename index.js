@@ -3,7 +3,7 @@ const path = require("path");
 require("dotenv").config();
 
 const app = express();
-const db = require("./model/database");
+const db = require("./database");
 const port = process.env.PORT; /*|| 3000*/
 const Carros = require("./model/carros");
 
@@ -23,26 +23,24 @@ app.get("/detalhes", (req, res) => {
   res.render("detalhes");
 });
 
-app.get("/listagem", (req, res) => {
-  res.render("listagem");
-});
-
 app.get("/edicao", (req, res) => {
   res.render("edicao");
 });
 
-app.get("/edicao/:id", async (req, res) => {
+app.get("/cadastro", (req, res) => {
+  res.render("cadastro");
+});
+
+app.get("/listagem/:id", async (req, res) => {
   const carros = await Carros.findByPk(req.params.id);
-  res.render("edicao", );
 });
 
-app.get("/carros", async (req, res) => {
+app.get("/listagem", async (req, res) => {
   const carros = await Carros.findAll();
-  //res.json(carros);
-  res.render("carros", { Carros: carros });
+  res.render("listagem", { carros: carros });
 });
 
-app.post("/carros", async (req, res) => {
+app.post("/cadastro", async (req, res) => {
   const {
     nome,
     marca,
@@ -53,17 +51,35 @@ app.post("/carros", async (req, res) => {
     numerocilindros,
     imagem_url,
   } = req.body;
-  const carros = Carros.create({
-    Nome: nome,
-    Marca: marca,
-    Ano: ano,
-    Cilindrada: cilindrada,
-    Potencia: potencia,
-    Peso: peso,
-    Numero_Cilindros: numerocilindros,
-    Imagem: imagem_url,
-  });
-  res, render("..views/carros", { Carros: carros });
+
+  if (!nome) {
+    res.render("cadastro", { mensagem: "Nome do carro é obrigatório!" });
+  }
+
+  if (!marca) {
+    res.render("cadastro", { mensagem: "Marca do carro é obrigatório!" });
+  }
+
+  if (!imagem_url) {
+    res.render("cadastro", { mensagem: "Imagem do carro é obrigatório!" });
+  }
+
+  try {
+    const carros = await Carros.create({
+      Nome: nome,
+      Marca: marca,
+      Ano: ano,
+      Cilindrada: cilindrada,
+      Potencia: potencia,
+      Peso: peso,
+      Numero_Cilindros: numerocilindros,
+      Imagem: imagem_url,
+    });
+    res.render("listagem", { Carros: carros });
+  } catch (err) {
+    console.log(err);
+    res.render("cadastro", { mensagem: "Erro ao cadastrar o veículo!" });
+  }
 });
 
 db.conectado();
