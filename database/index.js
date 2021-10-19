@@ -12,12 +12,14 @@ const sequelize = new Sequelize(
 );
 
 async function conectado() {
-    try {
+  try {
     await sequelize.authenticate();
-    console.log("Connection has been established successfully./Conectado com sucesso!");
+    console.log(
+      "Connection has been established successfully./Conectado com sucesso!"
+    );
   } catch (error) {
     console.error("Unable to connect to the database:", error);
   }
 }
 
-module.exports = {sequelize, conectado};
+module.exports = { sequelize, conectado };
