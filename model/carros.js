@@ -35,11 +35,19 @@ const Carros = database.sequelize.define(
       allowNull: false,
     },
     numerocilindros: {
+      type: Sequelize.INTEGER,
+      allowNull: false,
+    },
+    imagem: {
+      type: Sequelize.STRING,
+      allowNull: false,
+    },
+    aceleracao: {
       type: Sequelize.DOUBLE,
       allowNull: false,
     },
-    imagem_url: {
-      type: Sequelize.STRING,
+    torque: {
+      type: Sequelize.DOUBLE,
       allowNull: false,
     },
   },

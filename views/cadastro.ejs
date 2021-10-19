@@ -6,9 +6,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="/CSS/style.css">
         <link rel="shortcut icon" type="imagex/png" href="/img/car-small.ico">
-        <title>Edição</title>
+        <title>Cadastro</title>
     </head>
-    <body class="body">
+    <body>
         <header>
             <nav>
                 <a class="botao" href="index">Home</a>
@@ -21,7 +21,7 @@
             </nav>
         </header>
             <h1>CADASTRO</h1>
-                <form action="/criar" method="POST">
+                <form method="POST" enctype="multipart/form-data">
                     <section>
                         <label for="nome">Nome</label>
                         <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" required>
@@ -29,6 +29,7 @@
                     <section>
                         <label for="marca">Marca</label>
                         <select name="marca">
+                            <option value="Acura">Acura</option>
                             <option value="Agrale">Agrale</option>
                             <option value="Aston Martin">Aston Martin</option>
                             <option value="Audi">Audi</option>                        
@@ -107,6 +108,16 @@
                     <section>
                         <label for="imagem">Imagem</label>
                         <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple>
+                    </section>
+
+                    <section>
+                        <label for="aceleracao">Aceleração</label>
+                        <input type="number" name="aceleracao" id="aceleracao" min="1.00" max="30.00" step="0.01" placeholder="Digite o tempo do 0 a 100 km/h do carro">
+                    </section>
+
+                    <section>
+                        <label for="torque">Torque</label>
+                        <input type="number" name="torque" id="torque" min="8.00" max="200.00" step="0.01" placeholder="Digite o torque em kgfm">
                     </section>
 
                     <button id="submit" type="submit">Cadastrar</button>
