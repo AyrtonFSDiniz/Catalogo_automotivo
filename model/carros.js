@@ -23,7 +23,7 @@ const Carros = database.sequelize.define(
       allowNull: false,
     },
     cilindrada: {
-      type: Sequelize.DOUBLE,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
     potencia: {
@@ -43,11 +43,11 @@ const Carros = database.sequelize.define(
       allowNull: false,
     },
     aceleracao: {
-      type: Sequelize.DOUBLE,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
     torque: {
-      type: Sequelize.DOUBLE,
+      type: Sequelize.FLOAT,
       allowNull: false,
     },
   },
