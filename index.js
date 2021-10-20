@@ -6,7 +6,7 @@ const app = express();
 const db = require("./database");
 const multer = require("multer");
 const storage = require("./controller/index");
-const port = process.env.PORT; /*|| 3000*/
+const port = process.env.PORT || 3000;
 const Carros = require("./model/carros");
 const upload = multer({ storage });
 const lista_carros = [];
@@ -15,8 +15,6 @@ let message = "";
 app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "views/public")));
 app.use(express.urlencoded({ extended: true }));
-
-let messageCadastro = "";
 
 app.get("/", (req, res) => {
   res.render("index");
@@ -56,17 +54,20 @@ app.post("/cadastro", async (req, res) => {
     aceleracao,
     torque,
   } = req.body;
-  message = "Cadastro realizado com sucesso!";
+  
   if (!nome) {
-    res.render("cadastro", { mensagem: "Nome do carro é obrigatório!" });
+    message = "Nome do carro é obrigatório!";
+    res.render("cadastro", { message });
   }
 
   if (!marca) {
-    res.render("cadastro", { mensagem: "Marca do carro é obrigatório!" });
+    message = "Marca do carro é obrigatório!";
+    res.render("cadastro", { message });
   }
 
   if (!imagem) {
-    res.render("cadastro", { mensagem: "Imagem do carro é obrigatório!" });
+    message = "Imagem do carro é obrigatório!";
+    res.render("cadastro", { message });
   }
 
   try {
@@ -85,7 +86,8 @@ app.post("/cadastro", async (req, res) => {
     res.render("listagem", message, { Carros: carros });
   } catch (err) {
     console.log(err);
-    res.render("cadastro", { mensagem: "Erro ao cadastrar o veículo!" });
+    message = "Erro ao cadastrar o veículo!";
+    res.render("cadastro", { message });
   }
 });
 
@@ -104,9 +106,8 @@ app.get("/edicao/:id", async (req, res) => {
   const carro = await Carros.findByPk(req.params.id);
 
   if (!carro) {
-    res.render("edicao", {
-      mensagem: "Carro não encontrado!",
-    });
+    message = "Carro não encontrado!";
+    res.render("edicao", { message });
   }
   res.render("edicao", { carro: carro });
 });
@@ -118,16 +119,18 @@ app.post("/edicao/:id", async (req, res) => {
   carro.nome = nome;
   carro.marca = marca;
   const carroEditado = await carro.save();
-  res.render("edicao", {
-    carro: carroEditado,
-    mensagemSucesso: "Carro editado com sucesso!",
-  });
+  message = "Carro editado com sucesso!";
+    res.render("edicao", {
+      carro: carroEditado,
+      message,
+    });
 });
 
 app.get("/deletar/:id", async (req, res) => {
   const carro = await Carros.findByPk(req.params.id);
   if (!carro) {
-    res.render("deletar", { mensagem: "Carro não encontrado!" });
+    message = "Carro não encontrado!";
+    res.render("deletar", { message });
   }
   res.render("deletar", { carro });
 });
@@ -135,12 +138,12 @@ app.get("/deletar/:id", async (req, res) => {
 app.post("/deletar/:id", async (req, res) => {
   const carro = await Carros.findByPk(req.params.id);
   if (!carro) {
-    res.render("deletar", { mensagem: "Carro não encontrado!" });
+    message = "Carro não encontrado!";
+    res.render("deletar", { message });
   }
   await carro.destroy();
-  res.render("edicao", {
-    mensagem: `Carro ${carro.nome} deletado com sucesso!`,
-  });
+  message = `Carro ${carro.nome} deletado com sucesso!`;
+  res.render("edicao", { message });
 });
 
 db.conectado();
