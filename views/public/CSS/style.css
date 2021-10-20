@@ -126,7 +126,6 @@ article {
   margin: 1rem;
   flex-direction: column;
   text-align: center;
-  max-width: 80%;
 }
 li {
   list-style: none;
@@ -135,5 +134,4 @@ li {
 #lista {
   margin-bottom: 3rem;
   text-align: center;
-  max-width: 80%;
 }
