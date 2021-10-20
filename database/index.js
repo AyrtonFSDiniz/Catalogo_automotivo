@@ -23,12 +23,11 @@ async function conectado() {
   }
 }
 
-module.exports = {sequelize, conectado};
+module.exports = { sequelize, conectado };
+
 */
 
 const { Sequelize } = require("sequelize");
-
-//const Sequelize = require("sequelize");
 
 const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialect: "postgres",
