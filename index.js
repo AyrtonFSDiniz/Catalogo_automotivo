@@ -16,6 +16,8 @@ app.set("view engine", "ejs");
 app.use(express.static(path.join(__dirname, "views/public")));
 app.use(express.urlencoded({ extended: true }));
 
+let messageCadastro = "";
+
 app.get("/", (req, res) => {
   res.render("index");
 });
