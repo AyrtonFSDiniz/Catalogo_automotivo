@@ -36,9 +36,21 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false
-    }
-  }
-})
+      rejectUnauthorized: false,
+    },
+  },
+  ssl: true,
+});
 
-modulo.exports = sequelize;
+async function conectado() {
+  try {
+    await sequelize.authenticate();
+    console.log(
+      "Connection has been established successfully./Conectado com sucesso!"
+    );
+  } catch (error) {
+    console.error("Unable to connect to the database:", error);
+  }
+}
+
+module.exports = { sequelize, conectado };
