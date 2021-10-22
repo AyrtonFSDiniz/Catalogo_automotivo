@@ -22,7 +22,7 @@
             </nav>
         </header> 
         <h1>EDIÇÃO</h1>
-            <form action="" method="POST" enctype="multipart/form-data">
+            <form action="/editar/:id<%= carros.id%>" method="POST" enctype="multipart/form-data">
                 <section>
                     <label for="id">ID</label>
                     <input type="number" name="id" id="id" min="1" step="1" placeholder="Digite o ID para editar/excluir" required>
