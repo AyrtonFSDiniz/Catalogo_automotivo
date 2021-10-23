@@ -20,9 +20,11 @@
                 <a class="botao" href="edicao">Edição</a>
             </nav>
 
-      
-
-
+            <% if(message != "") {  %>
+                <section id="message">
+                    <p><%= message %></p> <span id="close">&times;</span>
+                </section>
+            <% }  %>
           
         </header>
             <h1>CADASTRO</h1>

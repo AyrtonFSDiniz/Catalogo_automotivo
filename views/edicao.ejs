@@ -20,21 +20,31 @@
                 <a class="botao" href="listagem">Listagem</a>
                 
             </nav>
+
+            <% if(message != "") {  %>
+                <section id="message">
+                    <p><%= message %></p> <span id="close">&times;</span>
+                </section>
+            <% }  %>
+
         </header> 
         <h1>EDIÇÃO</h1>
-            <form action="/editar/:id<%= carros.id%>" method="POST" enctype="multipart/form-data">
+
+        <% if (carros != null) { %>
+        }
+            <form action="/editar/:id<%= carros.id%>" method="POST">
                 <section>
                     <label for="id">ID</label>
-                    <input type="number" name="id" id="id" min="1" step="1" placeholder="Digite o ID para editar/excluir" required>
+                    <input type="number" name="id" id="id" min="1" step="1" placeholder="Digite o ID para editar/excluir" value = "<% carros.id %>" required>
                 </section>
                 
                 <section>
                     <label for="nome">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" required>
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome do veículo" value = "<% carros.nome %>" required>
                 </section>
                 <section>
                     <label for="marca">Marca</label>
-                    <select name="marca">
+                    <select name="marca" value = "<% carros.marca %>">
                         <option value="Acura">Acura</option>
                         <option value="Agrale">Agrale</option>
                         <option value="Aston Martin">Aston Martin</option>
@@ -90,43 +100,43 @@
                 </section>
                 <section>
                     <label for="ano">Ano</label>
-                    <input type="month" name="ano" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
+                    <input type="number" name="ano" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" value = "<% carros.ano %>" required>
                 </section>
                 <section>
                     <label for="cilindrada">Cilindrada</label>
-                    <input type="number" name="cilindrada" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" required>
+                    <input type="number" name="cilindrada" id="cilindrada" min="1.0" max="10.0" step="0.1" placeholder="Digite a cilindrada do veículo" value = "<% carros.cilindrada %>" required>
                 </section>
                 <section>
                     <label for="potencia">Potência</label>
-                    <input type="number" name="potencia" id="potencia" min="30" max="2000" step="1" placeholder="Digite a potência do veículo" required>
+                    <input type="number" name="potencia" id="potencia" min="30" max="2000" step="1" placeholder="Digite a potência do veículo" value = "<% carros.potencia %>" required>
                 </section>
                 <section>
                     <label for="peso">Peso</label>
-                    <input type="number" name="peso" id="peso" min="300" max="5000" step="1" placeholder="Digite o peso do veículo" required>
+                    <input type="number" name="peso" id="peso" min="300" max="5000" step="1" placeholder="Digite o peso do veículo" value = "<% carros.peso %>" required>
                 </section>
                 <section>
                     <label for="numerocilindros">Quantidade de Cilindros</label>
-                    <input type="number" name="numerocilindros" id="numerocilindros" min="2" max="12" step="1" placeholder="Digite a quantidade de cilindros" required>
+                    <input type="number" name="numerocilindros" id="numerocilindros" min="2" max="12" step="1" placeholder="Digite a quantidade de cilindros" value = "<% carros.numerocilindros %>" required>
                 </section>
 
                 <section>
                     <label for="imagem">Imagem</label>
-                    <input type="file" name="imagem" id="imagem" accept=".png, .jpeg, .jpg, .gif" multiple>
+                    <input type="text" name="imagem" id="imagem" value = "<% carros.imagem %>">
                 </section>
 
                 <section>
                     <label for="aceleracao">Aceleração</label>
-                    <input type="number" name="aceleracao" id="aceleracao" min="1.00" max="30.00" step="0.01" placeholder="Digite o tempo do 0 a 100 km/h do carro">
+                    <input type="number" name="aceleracao" id="aceleracao" min="1.00" max="30.00" step="0.01" placeholder="Digite o tempo do 0 a 100 km/h do carro" value = "<% carros.aceleracao %>">
                 </section>
 
                 <section>
                     <label for="torque">Torque</label>
-                    <input type="number" name="torque" id="torque" min="8.00" max="200.00" step="0.01" placeholder="Digite o torque em kgfm">
+                    <input type="number" name="torque" id="torque" min="8.00" max="200.00" step="0.01" placeholder="Digite o torque em kgfm" value = "<% carros.torque %>">
                 </section>
 
-                <button id="submit" type="submit">Editar</button>
-                <button id="submit" type="submit">Apagar</button>
+                <button name="submit_editar" type="submit">Editar</button>
+                <button name="submit_apagar" type="submit" formaction ="/deletar/:id<%= carros.id%">Apagar</button>
             </form>
-
+            <% } %>
     </body>
 </html>
